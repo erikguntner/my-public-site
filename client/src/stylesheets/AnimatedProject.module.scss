@@ -1,0 +1,22 @@
+.project {
+  width: 100%;
+
+  &:not(:last-child) {
+    border-bottom: 3px solid black;
+  }
+
+  &Title {
+    display: flex;
+    align-items: center;
+
+    & > div {
+      font-size: 2.4rem;
+      margin: 0 1rem;
+    }
+  }
+
+  &Content {
+    min-height: 0px;
+    overflow: hidden;
+  }
+}

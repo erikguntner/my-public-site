@@ -1,0 +1,41 @@
+.inputGroup {
+  display: flex;
+  flex-direction: column-reverse;
+  position: relative;
+}
+
+.input {
+  width: 100%;
+  outline: none;
+  border: 1px solid black;
+  padding: 1rem;
+  font-size: 1.6rem;
+  transition: all 0.2s ease;
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+  }
+}
+
+.label {
+  font-size: 2rem;
+  padding: 1.6rem 10px 3px 1rem;
+  transition: all 0.2s ease;
+}
+
+.error {
+  & > input {
+    border: 1px solid #ef0d33;
+  }
+
+  & > label {
+    color: #ef0d33;
+  }
+}
+
+.errorMessage {
+  color: #ef0d33;
+}

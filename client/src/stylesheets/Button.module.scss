@@ -1,0 +1,133 @@
+.btn {
+  position: relative;
+  padding: 1rem 0;
+  width: 125px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  background-color: transparent;
+  border: 1px solid black;
+  overflow: hidden;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover::before {
+    opacity: 1;
+    transform: translatex(0%);
+  }
+
+  &:hover .btnOverlay {
+    opacity: 1;
+    transform: translatex(0);
+  }
+
+  &:hover .btnText {
+    transform: translatex(-100%);
+    opacity: 0;
+  }
+
+  &::before {
+    content: attr(data-text);
+    color: #fff;
+    opacity: 0;
+    position: absolute;
+    transform: translatex(65%);
+    z-index: 10;
+    transition: all 0.4s ease;
+  }
+
+  &Overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    color: #fff;
+    opacity: 0;
+    transform: translatex(100%) skew(-15deg);
+    transition: transform 0.5s ease, opacity 0.3s ease;
+    background-color: black;
+  }
+
+  &Text {
+    display: inline-block;
+    opacity: 1;
+    transform: translatex(0);
+    transition: 0.4s all ease;
+  }
+}
+
+.btnNav {
+  position: relative;
+  padding: 1rem;
+  width: 100%;
+  font-size: 1.4rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  background-color: transparent;
+  border: none;
+  overflow: hidden;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:hover::before {
+    opacity: 1;
+    transform: translatex(0%);
+  }
+
+  &:hover .btnOverlay {
+    opacity: 1;
+    transform: translatex(0);
+  }
+
+  &:hover .btnText {
+    transform: translatex(-100%);
+    opacity: 0;
+  }
+
+  &::before {
+    content: attr(data-text);
+    color: #fff;
+    opacity: 0;
+    position: absolute;
+    transform: translatex(65%);
+    z-index: 10;
+    transition: all 0.4s ease;
+  }
+
+  &Overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    color: #fff;
+    opacity: 0;
+    transform: translatex(100%) skew(-15deg);
+    transition: transform 0.5s ease, opacity 0.3s ease;
+    background-color: black;
+  }
+
+  &Text {
+    display: inline-block;
+    opacity: 1;
+    transform: translatex(0);
+    transition: 0.4s all ease;
+  }
+}
