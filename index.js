@@ -1,13 +1,12 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const path = require('path');
 
 const app = express();
 
 app.use(cors());
 app.use(bodyParser.json({ type: '*/*' }));
-
-app.get('/', () => console.log('yoooo'));
 
 // Serve static assets if in production
 if (process.env.NODE_ENV === 'production') {
