@@ -1,5 +1,9 @@
 {
   "name": "personal-site",
+  "engines": {
+    "node": "10.13.0",
+    "npm": "6.4.1"
+  },
   "version": "1.0.0",
   "description": "Erik Guntner's Personal site",
   "main": "index.js",
