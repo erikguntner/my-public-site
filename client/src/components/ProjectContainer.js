@@ -26,14 +26,14 @@ const ProjectContainer = () => {
         title="Run Tracker"
         id={3}
         sliceChar={4}
-        img={'codesmith'}
+        img={'run'}
       />
       <Project
         color="orange"
         title="Avalon"
         id={4}
         sliceChar={3}
-        img={'codesmith'}
+        img={'avalon'}
       />
       <Project
         color="#00afd7"

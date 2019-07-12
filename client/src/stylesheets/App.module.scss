@@ -1,28 +1,125 @@
+@import './shared.scss';
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700&display=swap');
+
+html {
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 62.5%;
+
+  @include respond(phone) {
+    font-size: 56.25%; // 1rem = 9px; 9/16 = 50%
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: 'Montserrat', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
 .container {
   height: 100vh;
   width: 100vw;
   display: flex;
+
+  @include respond(tab-land) {
+    flex-direction: column;
+  }
+}
+
+.links {
+  @include respond(tab-land) {
+    display: flex;
+  }
+
+  @include respond(phone) {
+    display: none;
+  }
 }
 
 .nav {
   height: 100%;
   width: 20%;
-  background-color: #fff;
+  background-color: $blue-dark;
   border-right: 3px solid black;
+
+  @include respond(tab-land) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 70px;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    z-index: 10;
+  }
 
   &Title {
     width: 100%;
     padding: 2.4rem;
     text-align: center;
+    color: #fff;
+
+    @include respond(tab-land) {
+      padding: 0;
+      width: auto;
+      margin-right: auto;
+    }
 
     h1 {
       font-weight: 700;
       font-size: 3.2rem;
       line-height: 1.2;
+
+      &:nth-of-type(1) {
+        @include respond(tab-land) {
+          display: none;
+        }
+      }
+
+      &:nth-of-type(2) {
+        display: none;
+
+        @include respond(tab-land) {
+          display: inline-block;
+        }
+      }
+    }
+
+    span {
+      color: #48b5b9;
     }
 
     h4 {
       font-size: 1.6rem;
+
+      @include respond(tab-land) {
+        display: none;
+      }
     }
   }
 }
@@ -30,4 +127,9 @@
 .content {
   height: 100%;
   flex: 1;
+
+  @include respond(tab-land) {
+    margin-top: 70px;
+    height: calc(100% - 70px);
+  }
 }

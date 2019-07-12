@@ -1,3 +1,5 @@
+@import './shared.scss';
+
 .container {
   height: 100%;
   width: 100%;
@@ -5,18 +7,28 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 2rem;
 }
 
 .content {
   max-width: 700px;
 
-  & > h1 {
+  & h1 {
+    display: flex;
+    align-items: center;
     font-size: 4.8rem;
+    overflow: hidden;
   }
 
-  & > p {
+  & h3 {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+  }
+
+  & p {
     font-size: 2rem;
     margin-bottom: 2rem;
+    opacity: 0.7;
   }
 }
 
@@ -29,6 +41,18 @@
     & > li {
       font-size: 1.6rem;
       list-style: none;
+      opacity: 0.7;
     }
+  }
+}
+
+@keyframes fade {
+  from {
+    transform: translateY(10%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
   }
 }

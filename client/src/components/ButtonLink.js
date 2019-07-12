@@ -1,18 +1,18 @@
 import React from 'react';
 import styles from '../stylesheets/Button.module.scss';
 
-const Button = ({ type, title, onClick, active }) => {
+const ButtonLink = ({ type, title, onClick, active, href }) => {
   const btnStyle = {
-    nav: [styles.btnNav, styles.btnNavOverlay, styles.btnNavText],
+    link: [styles.link, styles.linkOverlay, styles.linkText],
     btn: [styles.btn, styles.btnOverlay, styles.btnText],
   };
 
   return (
-    <button onClick={onClick} className={btnStyle[type][0]} data-text={title}>
+    <a href={href} className={btnStyle[type][0]} data-text={title}>
       <span className={btnStyle[type][1]} />
       <span className={btnStyle[type][2]}>{title}</span>
-    </button>
+    </a>
   );
 };
 
-export default Button;
+export default ButtonLink;

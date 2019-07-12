@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from '../stylesheets/Input.module.scss';
+import styles from '../stylesheets/TextArea.module.scss';
 
-const Input = ({ field = {}, form = {}, type, label, placeholder }) => {
+const TextArea = ({ field = {}, form = {}, type, label, placeholder }) => {
   const { name } = field;
   const { touched, errors } = form;
 
@@ -13,7 +13,7 @@ const Input = ({ field = {}, form = {}, type, label, placeholder }) => {
           touched[name] && errors[name] ? styles.error : ''
         }`}
       >
-        <input
+        <textarea
           type={type}
           {...field}
           className={styles.input}
@@ -36,10 +36,10 @@ const Input = ({ field = {}, form = {}, type, label, placeholder }) => {
   );
 };
 
-Input.propTypes = {
+TextArea.propTypes = {
   field: PropTypes.object.isRequired,
   form: PropTypes.object.isRequired,
   type: PropTypes.string.isRequired,
 };
 
-export default Input;
+export default TextArea;

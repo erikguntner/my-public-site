@@ -1,0 +1,53 @@
+$blue-dark: #0f082e;
+$blue-light: #48b5b9;
+$purple-light: #573bd0;
+$pink: #ff4868;
+
+/*
+  MEDIA QUERIES
+  0 - 600px - Mobile phones
+  600 - 900px - Tablet portrait
+  900 - 1200px - Tablet landscape
+  1200 - 1800px - Desktop - normal styles
+  1800px + Large desktop
+
+  $breakpoint argument choices:
+  - phone 
+  - tab-port 
+  - tab-land
+  - big-desktop
+
+  ORDER = Base + typography > general layout + grid > page layout > components
+
+  1em = 16px;
+*/
+
+@mixin respond($breakpoint) {
+  @if ($breakpoint == phone) {
+    //600px
+    @media (max-width: 37.5em) {
+      @content;
+    }
+  }
+
+  @if ($breakpoint == tab-port) {
+    // 900px
+    @media (max-width: 56.25em) {
+      @content;
+    }
+  }
+
+  @if ($breakpoint == tab-land) {
+    // 1200px
+    @media (max-width: 62.5em) {
+      @content;
+    }
+  }
+
+  @if ($breakpoint == big-desktop) {
+    // 1800px
+    @media (max-width: 112.5em) {
+      @content;
+    }
+  }
+}
