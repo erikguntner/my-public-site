@@ -1,18 +1,21 @@
 import React, { useState } from 'react';
 import Button from './Button';
-import RouterLink from './RouterLink';
 import ProjectContainer from './ProjectContainer';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import AboutMe from './AboutMe';
 import Contact from './Contact';
+import Nav from './Nav';
+
 import styles from '../stylesheets/App.module.scss';
 
 const App = () => {
   const [pageId, setPage] = useState(1);
+  const [open, toggle] = useState(false);
 
   return (
     <Router>
       <main className={styles.container}>
+        <Nav pageId={pageId} setPage={setPage} open={open} toggle={toggle} />
         <nav className={styles.nav}>
           <div className={styles.navTitle}>
             <h1>Erik Guntner</h1>
@@ -47,6 +50,9 @@ const App = () => {
               />
             </Link>
           </div>
+          <button className={styles.menuBtn} onClick={() => toggle(!open)}>
+            open
+          </button>
         </nav>
         <section className={styles.content}>
           <Switch>

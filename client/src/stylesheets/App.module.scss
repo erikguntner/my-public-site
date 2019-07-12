@@ -133,3 +133,12 @@ code {
     height: calc(100% - 70px);
   }
 }
+
+.menuBtn {
+  display: none;
+  z-index: 15;
+
+  @include respond(phone) {
+    display: flex;
+  }
+}
