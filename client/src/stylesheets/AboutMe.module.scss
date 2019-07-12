@@ -18,6 +18,10 @@
     align-items: center;
     font-size: 4.8rem;
     overflow: hidden;
+    
+    @include respond(phone) {
+      zfont-size: 3.6rem;
+    }
   }
 
   & h3 {
