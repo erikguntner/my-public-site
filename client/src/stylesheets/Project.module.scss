@@ -70,6 +70,7 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      text-align: center;
     }
   }
 
@@ -137,4 +138,40 @@
   & > button {
     margin-right: 1.2rem;
   }
+}
+
+.codesmith {
+  content: url('../assets/codesmith.png');
+
+  @include respond(phone) {
+    content: url('../assets/codesmith-small.png');
+  }
+}
+
+.avalon {
+  content: url('../assets/avalon.png');
+
+  @include respond(phone) {
+    content: url('../assets/avalon-small.png');
+  }
+}
+
+.proto {
+  content: url('../assets/proto.png');
+
+  @include respond(phone) {
+    content: url('../assets/proto-small.png');
+  }
+}
+
+.run {
+  content: url('../assets/run.png');
+
+  @include respond(phone) {
+    content: url('../assets/run-small.png');
+  }
+}
+
+.swell {
+  content: url('../assets/swell.png');
 }

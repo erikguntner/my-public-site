@@ -5,17 +5,21 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   padding: 2rem;
 
   @include respond(phone) {
     height: calc(100% - 70px);
+    justify-content: flex-start;
   }
 }
 
 .content {
   max-width: 700px;
+
+  @include respond(phone) {
+    margin-top: 4rem;
+  }
 
   & h1 {
     display: flex;
@@ -40,6 +44,23 @@
 
     @include respond(phone) {
       font-size: 1.4rem;
+    }
+
+    &:nth-of-type(2) {
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+
+      @include respond(phone) {
+        font-size: 1.2rem;
+      }
+    }
+
+    &:nth-of-type(3) {
+      font-size: 1.6rem;
+
+      @include respond(phone) {
+        font-size: 1.2rem;
+      }
     }
   }
 }

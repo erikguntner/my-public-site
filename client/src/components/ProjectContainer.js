@@ -10,38 +10,13 @@ const ProjectContainer = () => {
       <Project
         color="#0F3181"
         title="Codesmith"
-        id={1}
         sliceChar={4}
-        img={'codesmith'}
+        img="codesmith"
       />
-      <Project
-        color="#1de9b6"
-        title="React Proto"
-        id={2}
-        sliceChar={5}
-        img={'proto'}
-      />
-      <Project
-        color="#0991d3"
-        title="Run Tracker"
-        id={3}
-        sliceChar={4}
-        img={'run'}
-      />
-      <Project
-        color="orange"
-        title="Avalon"
-        id={4}
-        sliceChar={3}
-        img={'avalon'}
-      />
-      <Project
-        color="#00afd7"
-        title="Swell"
-        id={5}
-        sliceChar={2}
-        img={'swell'}
-      />
+      <Project color="#1de9b6" title="React Proto" sliceChar={5} img="proto" />
+      <Project color="#0991d3" title="Run Tracker" sliceChar={4} img="run" />
+      <Project color="orange" title="Avalon" sliceChar={3} img="avalon" />
+      <Project color="#00afd7" title="Swell" id={5} sliceChar={2} img="swell" />
     </div>
   );
 };

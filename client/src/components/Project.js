@@ -1,18 +1,12 @@
 import React, { useState } from 'react';
 import { Waypoint } from 'react-waypoint';
+import LazyLoad from 'react-lazy-load';
 import { animated, useSpring, config } from 'react-spring';
 import Button from './Button';
 
-import codesmith from '../assets/codesmith.png';
-import proto from '../assets/proto.png';
-import swell from '../assets/swell.png';
-import avalon from '../assets/avalon.png';
-import run from '../assets/run.png';
-
 import styles from '../stylesheets/Project.module.scss';
 
-const Project = ({ id, title, openId, color, onClick, sliceChar, img }) => {
-  console.log(window.innerHeight);
+const Project = ({ title, color, sliceChar, img }) => {
   const [scrolled, setScrolled] = useState(false);
   const transform = useSpring({
     transform: scrolled ? 'translate3d(0, 0 ,0)' : 'translate3d(0, 100% ,0)',
@@ -32,14 +26,6 @@ const Project = ({ id, title, openId, color, onClick, sliceChar, img }) => {
     ['CSS Modules', 'SASS', 'MongoDB'],
   ];
 
-  const images = {
-    codesmith,
-    proto,
-    swell,
-    avalon,
-    run,
-  };
-
   return (
     <div className={styles.project}>
       <div className={styles.projectContent}>
@@ -55,8 +41,7 @@ const Project = ({ id, title, openId, color, onClick, sliceChar, img }) => {
         />
         <div className={styles.projectDescription}>
           <h2 className={styles.projectTitle}>
-            <animated.span style={transform}>{firstSplice}</animated.span>
-            <animated.span style={transform}>{secondSplice}</animated.span>
+            <animated.span style={transform}>{title}</animated.span>
           </h2>
           <animated.div style={translate} className={styles.projectLower}>
             <p>
@@ -88,7 +73,7 @@ const Project = ({ id, title, openId, color, onClick, sliceChar, img }) => {
           </animated.div>
         </div>
         <animated.div style={translate} className={styles.projectImage}>
-          <img src={images[img]} alt="codesmith" />
+          <img className={styles[img]} alt={img} />
         </animated.div>
       </div>
     </div>

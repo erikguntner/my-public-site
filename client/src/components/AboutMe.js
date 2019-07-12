@@ -39,6 +39,15 @@ const AboutMe = () => {
             Front End team, rebuilding their platform using React, Redux and
             Node.
           </p>
+          <h3>What I use:</h3>
+          <p>
+            Front End: Javascript, React, Redux, Redux Thunk, Redux Saga, Jest,
+            Enzyme, Electron, Webpack, CSS Modules, SCSS, HTML
+          </p>
+          <p>
+            Back End/DB/Hosting: Node, Express, MongoDB, PostGres, Heroku, AWS
+            S3
+          </p>
           <h3>My other hobbies include:</h3>
           <div className={styles.hobbies}>
             <ul>
