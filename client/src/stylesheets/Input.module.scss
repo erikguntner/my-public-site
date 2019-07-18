@@ -1,21 +1,21 @@
 .inputGroup {
+  position: relative;
   display: flex;
   flex-direction: column-reverse;
-  position: relative;
 }
 
 .input {
   width: 100%;
+  padding: 1rem;
   outline: none;
   border: 1px solid black;
-  padding: 1rem;
   font-size: 1.6rem;
   transition: all 0.2s ease;
 }
 
 .label {
-  font-size: 2rem;
   padding: 0 10px 3px 1rem;
+  font-size: 2rem;
   transition: all 0.2s ease;
 }
 

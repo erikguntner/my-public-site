@@ -2,12 +2,12 @@
   position: relative;
   padding: 1rem 0;
   width: 125px;
+  background-color: transparent;
+  border: 1px solid black;
   font-size: 1.2rem;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.2rem;
-  background-color: transparent;
-  border: 1px solid black;
   overflow: hidden;
 
   &Active {
@@ -51,26 +51,26 @@
 
   &::before {
     content: attr(data-text);
-    color: #fff;
-    opacity: 0;
     position: absolute;
     transform: translatex(65%);
-    z-index: 10;
     transition: all 0.4s ease;
+    z-index: 10;
+    opacity: 0;
+    color: #fff;
   }
 
   &Overlay {
     position: absolute;
-    height: 100%;
-    width: 100%;
     top: 0;
     left: 0;
+    height: 100%;
+    width: 100%;
     z-index: 5;
     color: #fff;
+    background-color: black;
     opacity: 0;
     transform: translatex(100%) skew(-15deg);
     transition: transform 0.5s ease, opacity 0.3s ease;
-    background-color: black;
   }
 
   &Text {
@@ -81,16 +81,100 @@
   }
 }
 
+.btnUnderline {
+  position: relative;
+  padding: 1rem 0;
+  width: auto;
+  background-color: transparent;
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  overflow: hidden;
+  border: none;
+  border-bottom: 1px solid black;
+
+  &Active {
+    &::before {
+      opacity: 1;
+      transform: translatey(0%);
+    }
+
+    & .btnOverlay {
+      opacity: 1;
+      transform: translatey(0);
+    }
+
+    & .btnText {
+      transform: translatey(-100%);
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover::before {
+    opacity: 1;
+    transform: translatey(0%);
+  }
+
+  &:hover .btnUnderlineOverlay {
+    opacity: 1;
+    transform: translatey(0);
+  }
+
+  &:hover .btnUnderlineText {
+    transform: translatey(-100%);
+    opacity: 0;
+  }
+
+  &::before {
+    content: attr(data-text);
+    position: absolute;
+    transform: translatey(65%);
+    transition: all 0.4s ease;
+    z-index: 10;
+    opacity: 0;
+    color: black;
+  }
+
+  &Overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 5;
+    color: #fff;
+    background: transparent;
+    opacity: 0;
+    transform: translatey(100%);
+    transition: transform 0.5s ease, opacity 0.3s ease;
+  }
+
+  &Text {
+    display: inline-block;
+    opacity: 1;
+    transform: translatey(0);
+    transition: 0.4s all ease;
+  }
+}
+
 .btnNav {
   position: relative;
-  padding: 1rem;
   width: 100%;
+  padding: 1rem;
+  background-color: transparent;
+  border: none;
   font-size: 1.4rem;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.2rem;
-  background-color: transparent;
-  border: none;
   overflow: hidden;
 
   &:focus {
@@ -122,8 +206,8 @@
     opacity: 0;
     position: absolute;
     transform: translatex(65%);
-    z-index: 10;
     transition: all 0.4s ease;
+    z-index: 10;
   }
 
   &Overlay {

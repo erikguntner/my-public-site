@@ -1,5 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { animated, useSpring } from 'react-spring';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCheckCircle } from '@fortawesome/free-regular-svg-icons';
+
+import { faExclamationCircle } from '@fortawesome/free-solid-svg-icons';
+
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 import axios from 'axios';
@@ -9,10 +14,7 @@ import TextArea from './TextArea';
 import styles from '../stylesheets/Contact.module.scss';
 
 const SignupSchema = Yup.object().shape({
-  name: Yup.string()
-    .required('username is required')
-    .min(4, 'username must be between 4-16 characters')
-    .max(16, 'username must be between 4-16 characters'),
+  name: Yup.string().required('name is required'),
   subject: Yup.string().required('subject is required'),
   email: Yup.string()
     .email()
@@ -21,7 +23,6 @@ const SignupSchema = Yup.object().shape({
 });
 
 const Contact = () => {
-
   const transform = useSpring({
     from: {
       transform: 'translate3d(0, 100% ,0)',
@@ -40,6 +41,20 @@ const Contact = () => {
     delay: 500,
   });
 
+  const [message, setMessage] = useState({
+    type: undefined,
+    message: '',
+  });
+
+  const handleInterval = () => {
+    setInterval(() => {
+      setMessage({
+        type: undefined,
+        message: '',
+      });
+    }, 3000);
+  };
+
   return (
     <div className={styles.contact}>
       <div className={styles.contactContainer}>
@@ -56,8 +71,22 @@ const Contact = () => {
             onSubmit={(values, { setSubmitting }) => {
               axios
                 .post('/api/contact', values)
-                .then(res => console.log(res))
-                .catch(err => console.log(err));
+                .then(res => {
+                  setMessage({
+                    type: 'success',
+                    message:
+                      'Message sent successfully. Look forward to speaking with you soon',
+                  });
+                  handleInterval();
+                })
+                .catch(err => {
+                  setMessage({
+                    type: 'success',
+                    message:
+                      'There seems to have been an issue on my end, please try again',
+                  });
+                  handleInterval();
+                });
             }}
           >
             {({ isSubmitting }) => (
@@ -130,6 +159,18 @@ const Contact = () => {
           </Formik>
         </animated.div>
       </div>
+      {message.type && (
+        <div className={styles.alert}>
+          <div className={styles[message.type]}>
+            <FontAwesomeIcon
+              icon={
+                message.type === 'success' ? faCheckCircle : faExclamationCircle
+              }
+            />
+          </div>
+          <div>{message.message}</div>
+        </div>
+      )}
     </div>
   );
 };

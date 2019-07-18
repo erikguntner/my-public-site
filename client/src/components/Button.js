@@ -5,6 +5,11 @@ const Button = ({ type, title, onClick, active }) => {
   const btnStyle = {
     nav: [styles.btnNav, styles.btnNavOverlay, styles.btnNavText],
     btn: [styles.btn, styles.btnOverlay, styles.btnText],
+    underline: [
+      styles.btnUnderline,
+      styles.btnUnderlineOverlay,
+      styles.btnUnderlineText,
+    ],
   };
 
   return (

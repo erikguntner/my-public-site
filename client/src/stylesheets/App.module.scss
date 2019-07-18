@@ -51,7 +51,10 @@ code {
 }
 
 .links {
+  margin-bottom: auto;
+
   @include respond(tab-land) {
+    margin-bottom: 0;
     display: flex;
   }
 
@@ -61,6 +64,8 @@ code {
 }
 
 .nav {
+  display: flex;
+  flex-direction: column;
   height: 100%;
   width: 20%;
   background-color: $blue-dark;
@@ -70,11 +75,12 @@ code {
     position: absolute;
     top: 0;
     left: 0;
-    height: 70px;
-    padding: 0 2rem;
     display: flex;
+    flex-direction: row;
     align-items: center;
+    height: 70px;
     width: 100%;
+    padding: 0 2rem;
     z-index: 10;
   }
 
@@ -122,6 +128,12 @@ code {
       }
     }
   }
+
+  & > div:nth-of-type(3) {
+    @include respond(tab-land) {
+      display: none;
+    }
+  }
 }
 
 .content {
@@ -136,9 +148,37 @@ code {
 
 .menuBtn {
   display: none;
+  background: transparent;
+  outline: none;
+  border: none;
   z-index: 15;
+  animation: menu 1s infinite;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  & div {
+    width: 4rem;
+    height: 3px;
+    background-color: #fff;
+
+    &:nth-of-type(1) {
+      margin-bottom: 8px;
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+      transition: transform 0.5s ease;
+    }
+
+    &:nth-of-type(3) {
+      margin-top: 8px;
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
 
   @include respond(phone) {
     display: flex;
+    flex-direction: column;
   }
 }

@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+
 import Button from './Button';
 import ProjectContainer from './ProjectContainer';
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import AboutMe from './AboutMe';
+import Social from './Social';
+import ButtonLink from './ButtonLink';
 import Contact from './Contact';
 import Nav from './Nav';
 
@@ -22,7 +25,9 @@ const App = () => {
             <h4>
               Software Engineer<span>/</span>LA
             </h4>
-            <h1>EG</h1>
+            <h1>
+              E<span>/</span>G
+            </h1>
           </div>
           <div className={styles.links}>
             <Link to="/">
@@ -50,8 +55,11 @@ const App = () => {
               />
             </Link>
           </div>
+          <Social align="center" type="light" />
           <button className={styles.menuBtn} onClick={() => toggle(!open)}>
-            open
+            <div />
+            <div />
+            <div />
           </button>
         </nav>
         <section className={styles.content}>

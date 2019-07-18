@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Button from './Button';
+import Social from './Social';
 
 import styles from '../stylesheets/Nav.module.scss';
 
@@ -45,6 +46,7 @@ const Nav = ({ pageId, setPage, open, toggle }) => {
           />
         </Link>
       </div>
+      <Social type="light" align="center" />
     </div>
   );
 };

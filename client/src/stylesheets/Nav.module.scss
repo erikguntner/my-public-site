@@ -1,23 +1,27 @@
 @import './shared.scss';
 
 .nav {
-  display: none;
-  height: 100vh;
-  width: 100vw;
   position: absolute;
   top: 0;
   left: 0;
+  display: none;
+  height: 100vh;
+  width: 100vw;
   background-color: $blue-dark;
   z-index: 9;
   transition: transform 0.3s ease;
 
   @include respond(phone) {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }
 
 .links {
   display: flex;
   flex-direction: column;
-  margin-top: 9rem;
+  margin-top: 12rem;
+  margin-bottom: auto;
 }

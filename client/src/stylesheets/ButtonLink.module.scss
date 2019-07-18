@@ -81,6 +81,91 @@
   }
 }
 
+.btnIcon {
+  position: relative;
+  font-size: 3rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  background-color: transparent;
+  overflow: hidden;
+  text-decoration: none;
+  color: #fff;
+
+  &:not(:last-child) {
+    margin-right: 2rem;
+  }
+
+  &Active {
+    &::before {
+      opacity: 1;
+      transform: translatex(0%);
+    }
+
+    & .btnOverlay {
+      opacity: 1;
+      transform: translatex(0);
+    }
+
+    & .btnText {
+      transform: translatex(-100%);
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover::before {
+    opacity: 1;
+    transform: translatex(0%);
+  }
+
+  &:hover .btnOverlay {
+    opacity: 1;
+    transform: translatex(0);
+  }
+
+  &:hover .btnText {
+    transform: translatex(-100%);
+    opacity: 0;
+  }
+
+  &::before {
+    content: attr(data-text);
+    color: #fff;
+    opacity: 0;
+    position: absolute;
+    transform: translatex(65%);
+    z-index: 10;
+    transition: all 0.4s ease;
+  }
+
+  &Overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    color: #fff;
+    opacity: 0;
+    transform: translatex(100%) skew(-15deg);
+    transition: transform 0.5s ease, opacity 0.3s ease;
+    background-color: black;
+  }
+
+  &Text {
+    display: inline-block;
+    opacity: 1;
+    transform: translatex(0);
+    transition: 0.4s all ease;
+  }
+}
+
 .link {
   position: relative;
   padding: 1rem;
@@ -116,16 +201,6 @@
     opacity: 0;
   }
 
-  &::before {
-    content: attr(data-text);
-    color: #0f082e;
-    opacity: 0;
-    position: absolute;
-    transform: translatex(65%);
-    z-index: 10;
-    transition: all 0.4s ease;
-  }
-
   &Overlay {
     position: absolute;
     height: 100%;
@@ -140,10 +215,12 @@
   }
 
   &Text {
-    color: #fff;
-    display: inline-block;
-    opacity: 1;
-    transform: translatex(0);
-    transition: 0.4s all ease;
+    content: attr(data-text);
+    color: #0f082e;
+    opacity: 0;
+    position: absolute;
+    transform: translatex(65%);
+    z-index: 10;
+    transition: all 0.4s ease;
   }
 }

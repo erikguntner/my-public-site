@@ -1,0 +1,41 @@
+@import './shared.scss';
+
+.left {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+
+  a {
+    text-decoration: none;
+    font-size: 3rem;
+
+    &:not(:last-child) {
+      margin-right: 2rem;
+    }
+  }
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  a {
+    text-decoration: none;
+    font-size: 3rem;
+
+    &:not(:last-child) {
+      margin-right: 2rem;
+    }
+  }
+}
+
+.light {
+  color: #fff;
+}
+
+.dark {
+  color: black;
+}

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Waypoint } from 'react-waypoint';
-import LazyLoad from 'react-lazy-load';
 import { animated, useSpring, config } from 'react-spring';
 import Button from './Button';
 
@@ -17,9 +16,6 @@ const Project = ({ title, color, sliceChar, img }) => {
     opacity: scrolled ? 1 : 0,
     transform: scrolled ? 'translate3d(0, 0 ,0)' : 'translate3d(0, 100px ,0)',
   });
-
-  const firstSplice = title.slice(0, sliceChar);
-  const secondSplice = title.slice(sliceChar);
 
   const tech = [
     ['React', 'Redux', 'Node', 'Express'],
