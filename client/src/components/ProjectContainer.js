@@ -10,13 +10,34 @@ const ProjectContainer = () => {
       <Project
         color="#0F3181"
         title="Codesmith"
-        sliceChar={4}
-        img="codesmith"
+        site="https://www.codesmith.io/"
+        id="codesmith"
       />
-      <Project color="#1de9b6" title="React Proto" sliceChar={5} img="proto" />
-      <Project color="#0991d3" title="Run Tracker" sliceChar={4} img="run" />
-      <Project color="orange" title="Avalon" sliceChar={3} img="avalon" />
-      <Project color="#00afd7" title="Swell" id={5} sliceChar={2} img="swell" />
+      <Project
+        color="#1de9b6"
+        github="https://github.com/React-Proto/react-proto"
+        title="React Proto"
+        id="proto"
+      />
+      <Project
+        color="#0991d3"
+        title="Run Tracker"
+        site="https://pacific-crag-45485.herokuapp.com/"
+        github="https://github.com/erikguntner/run-tracker"
+        id="run"
+      />
+      <Project
+        color="orange"
+        title="Avalon"
+        github="https://github.com/erikguntner/Avalon"
+        id="avalon"
+      />
+      <Project
+        color="#00afd7"
+        title="Swell"
+        id="swell"
+        github="https://github.com/erikguntner/Swell"
+      />
     </div>
   );
 };

@@ -10,6 +10,8 @@ const Nav = ({ pageId, setPage, open, toggle }) => {
     if (page !== pageId) {
       toggle(!open);
       setPage(page);
+    } else {
+      toggle(!open);
     }
   };
 
@@ -22,28 +24,13 @@ const Nav = ({ pageId, setPage, open, toggle }) => {
     >
       <div className={styles.links}>
         <Link to="/">
-          <Button
-            onClick={() => closeNav(1)}
-            active={pageId === 1}
-            type="nav"
-            title="About Me"
-          />
+          <button onClick={() => closeNav(1)}>About Me</button>
         </Link>
         <Link to="/work">
-          <Button
-            onClick={() => closeNav(2)}
-            active={pageId === 2}
-            type="nav"
-            title="My Work"
-          />
+          <button onClick={() => closeNav(1)}>My Work</button>
         </Link>
         <Link to="/contact">
-          <Button
-            onClick={() => closeNav(3)}
-            active={pageId === 3}
-            type="nav"
-            title="Contact"
-          />
+          <button onClick={() => closeNav(1)}>Contact</button>
         </Link>
       </div>
       <Social type="light" align="center" />

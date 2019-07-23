@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
 import styles from '../stylesheets/TextArea.module.scss';
 
 const TextArea = ({ field = {}, form = {}, type, label, placeholder }) => {

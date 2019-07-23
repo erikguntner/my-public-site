@@ -101,7 +101,7 @@ const Contact = () => {
                       form={form}
                       id="name"
                       label="name"
-                      placeholder="Name"
+                      placeholder="John Doe"
                     />
                   )}
                 />
