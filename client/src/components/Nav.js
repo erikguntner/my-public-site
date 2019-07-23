@@ -32,8 +32,21 @@ const Nav = ({ pageId, setPage, open, toggle }) => {
         <Link to="/contact">
           <button onClick={() => closeNav(1)}>Contact</button>
         </Link>
+        <a
+          href="https://www.linkedin.com/in/erikguntner/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <button>LinkedIn</button>
+        </a>
+        <a
+          href="https://github.com/erikguntner"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <button>Github</button>
+        </a>
       </div>
-      <Social type="light" align="center" />
     </div>
   );
 };
